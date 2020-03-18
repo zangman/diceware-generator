@@ -9,6 +9,16 @@ Download the code and run the following commands from the `diceware_generator` f
     mkdir build
     cd build
     cmake ..
-    make
+    sudo make install
 
 You can then run the generator using `DicewareGenerator`.
+
+# Uninstallation
+
+The following steps will uninstall the application:
+
+    cd build
+    cmake ..
+    sudo make uninstall
+
+Note that uninstall requires you to have run install since it uses the files generated during the install process.
