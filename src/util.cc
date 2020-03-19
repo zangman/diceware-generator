@@ -17,14 +17,12 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-namespace fs = std::filesystem;
-
 std::string util::GetShareDir() {
   std::string exe_path;
-  fs::path p{"/proc/self/exe"};
+  std::filesystem::path p{"/proc/self/exe"};
 
-  if (fs::exists(p) && fs::is_symlink(p)) {
-    exe_path = fs::read_symlink(p);
+  if (std::filesystem::exists(p) && std::filesystem::is_symlink(p)) {
+    exe_path = std::filesystem::read_symlink(p);
   } else {
     // Default path, ideally shouldn't come here.
     exe_path = "/usr/bin/executable";
