@@ -58,6 +58,7 @@ install(FILES
   share/diceware_generator/eff_large_wordlist.txt
   share/diceware_generator/diceware.wordlist.asc
   share/diceware_generator/dice.svg
+  share/applications/diceware-generator.desktop
   # Below is for testing only.
   # DESTINATION $ENV{HOME}/tmp/share/diceware_generator
   DESTINATION /usr/share/diceware_generator

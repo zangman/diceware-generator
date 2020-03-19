@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Diceware Generator
+Comment=An offline diceware password generator
+GenericName=Diceware Password Generator
+Exec=/usr/bin/DicewareGenerator
+#Icon=atom
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Utility;
+MimeType=text/plain;
+StartupWMClass=DicewareGenerator
