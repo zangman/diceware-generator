@@ -54,22 +54,16 @@ install(TARGETS DicewareGenerator
   COMPONENT binaries
 )
 
-install(FILES
-  share/diceware_generator/eff_large_wordlist.txt
-  share/diceware_generator/diceware.wordlist.asc
-  share/diceware_generator/dice.svg
-  share/applications/diceware-generator.desktop
-  # Below is for testing only.
-  # DESTINATION $ENV{HOME}/tmp/share/diceware_generator
-  DESTINATION /usr/share/diceware_generator
-  COMPONENT config
+install(DIRECTORY
+  share
+  DESTINATION /usr
 )
 
 set(INSTALL_MANIFEST ${CMAKE_CURRENT_BINARY_DIR}/install_manifest.txt)
 
 add_custom_target(uninstall
-  COMMAND cat ${INSTALL_MANIFEST} | xargs -n1 rm
-  COMMAND rmdir /usr/share/diceware_generator
-  COMMAND rm ${INSTALL_MANIFEST}
+  COMMAND cat ${INSTALL_MANIFEST} | xargs -n1 rm -v
+  COMMAND rmdir -v /usr/share/diceware_generator
+  COMMAND rm -v ${INSTALL_MANIFEST}
   DEPENDS ${INSTALL_MANIFEST}
 )
