@@ -1,1 +1,3 @@
 build
+*.tar.xz
+*.tar.gz

@@ -1,0 +1,48 @@
+# Maintainer: zangman <johnbakerworks@outlook.com>
+pkgname=diceware-generator
+pkgver=1.1
+pkgrel=1
+pkgdesc="Diceware password generator."
+arch=(x86_64)
+url="https://github.com/zangman/diceware-generator"
+license=('Apache')
+depends=('gtkmm>=3.24.2' 'libsodium>=1.0.18')
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=(
+  "https://github.com/zangman/diceware-generator/archive/v${pkgver}.tar.gz"
+)
+noextract=()
+validpgpkeys=()
+
+#prepare() {
+#  tar -C $srcdir -xvf v1.0.tar.gz
+#}
+
+build() {
+	cd "$pkgname-$pkgver"
+  mkdir -p build
+  cd build
+	cmake ..
+	make
+}
+
+#check() {
+#	cd "$pkgname-$pkgver"
+#	make -k check
+#}
+
+package() {
+	cd "$pkgname-$pkgver"
+  cd build
+  make DESTDIR="$pkgdir/" install
+}
+sha256sums=('959f56a92d8dea3b42c0a7b3498cdd4d75cfebdf0c568a3d1ad2fa1c33e0c078')
