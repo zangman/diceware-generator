@@ -3,7 +3,9 @@ Name=Diceware Generator
 Comment=An offline diceware password generator
 GenericName=Diceware Password Generator
 Exec=/usr/bin/DicewareGenerator
-Icon=diceware-generator
+# I don't know why the one below doesn't work.
+#Icon=diceware-generator
+Icon=/usr/share/icons/hicolor/256x256/apps/diceware-generator.png
 Type=Application
 StartupNotify=true
 Categories=GNOME;GTK;Utility;
